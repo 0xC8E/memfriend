@@ -13,7 +13,7 @@ class DB:
         self._transactions: typing.List[commands.Command] = []
 
     def dispatch(self, command: commands.Command):
-        method = getattr(self, self._get_command_name(command))
+        method = getattr(self, command.command_name())
 
         if method:
             return method(command)
@@ -43,7 +43,3 @@ class DB:
 
     def numequalto(self, command: commands.Numequalto) -> int:
         return self._counts[command.value]
-
-    @staticmethod
-    def _get_command_name(command: commands.Command) -> str:
-        return type(command).__name__.lower()
