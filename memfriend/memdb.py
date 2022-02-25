@@ -87,5 +87,5 @@ class DB:
         self._current_transaction = None
 
         for command in single_commands:
-            self.dispatch(command)
+            print(self.dispatch(command))
         return constants.NO_RESULT_SENTINEL
