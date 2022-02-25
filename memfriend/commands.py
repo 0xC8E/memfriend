@@ -48,3 +48,18 @@ class Numequalto(Command):
 
     def __repr__(self) -> str:
         return f"{super().__repr__()} {self.value}"
+
+
+@dataclass
+class Begin(Command):
+    pass
+
+
+@dataclass
+class Rollback(Command):
+    pass
+
+
+@dataclass
+class Commit(Command):
+    pass

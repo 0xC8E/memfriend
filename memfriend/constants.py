@@ -24,6 +24,11 @@ class NoTransactionSentinel(Sentinel):
         return "NO TRANSACTION"
 
 
+class NoResultSentinel(Sentinel):
+    def __repr__(self) -> str:
+        return ""
+
+
 NULL_SENTINEL = NullSentinel()
 SUCCESS_SENTINEL = SuccessSentinel()
 NO_TRANSACTION_SENTINEL = NoTransactionSentinel()
