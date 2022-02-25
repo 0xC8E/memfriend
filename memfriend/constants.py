@@ -32,3 +32,4 @@ class NoResultSentinel(Sentinel):
 NULL_SENTINEL = NullSentinel()
 SUCCESS_SENTINEL = SuccessSentinel()
 NO_TRANSACTION_SENTINEL = NoTransactionSentinel()
+NO_RESULT_SENTINEL = NoResultSentinel()

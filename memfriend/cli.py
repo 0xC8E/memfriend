@@ -38,6 +38,15 @@ def parse_command(command: str) -> commands.Command:
         value = parts[1]
         return commands.Numequalto(value=value)
 
+    if command_name == commands.Begin.command_name():
+        return commands.Begin()
+
+    if command_name == commands.Commit.command_name():
+        return commands.Commit()
+
+    if command_name == commands.Rollback.command_name():
+        return commands.Rollback()
+
 
 if __name__ == "__main__":
     start()

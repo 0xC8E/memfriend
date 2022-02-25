@@ -65,7 +65,7 @@ class DB:
         if self._current_transaction is not None:
             self._transactions.append(self._current_transaction)
         self._current_transaction = []
-        return constants.NoResultSentinel
+        return constants.NO_RESULT_SENTINEL
 
     def rollback(self, _: commands.Rollback) -> constants.Sentinel:
         if self._current_transaction is None:
@@ -75,7 +75,7 @@ class DB:
             self._current_transaction = self._transactions.pop()
         except IndexError:
             self._current_transaction = None
-        return constants.NoResultSentinel
+        return constants.NO_RESULT_SENTINEL
 
     def commit(self, _: commands.Commit) -> constants.Sentinel:
         if self._current_transaction is None:
@@ -88,3 +88,4 @@ class DB:
 
         for command in single_commands:
             self.dispatch(command)
+        return constants.NO_RESULT_SENTINEL
